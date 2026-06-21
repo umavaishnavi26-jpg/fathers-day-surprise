@@ -29,6 +29,7 @@ input {
   width: 80%;
   margin-top: 10px;
   font-size: 16px;
+  color: black;
 }
 
 button {
@@ -75,7 +76,7 @@ button:hover {
 
   <button onclick="checkAnswer()">Unlock 💙</button>
 
-  <div id="error"></div>
+  <div id="error" class="error"></div>
   <div id="message"></div>
 
 </div>
@@ -97,7 +98,6 @@ function typeText(text, element, speed = 35) {
 }
 
 function checkAnswer() {
-  // .toLowerCase() converts input to lowercase, so we only need lowercase checks
   const userInput = document.getElementById("answer").value.trim().toLowerCase();
   const error = document.getElementById("error");
   const message = document.getElementById("message");
@@ -107,7 +107,6 @@ function checkAnswer() {
   if (correctAnswers.includes(userInput)) {
     error.innerHTML = "";
 
-    // Added the missing backtick right at the end of the text message below
     const text = `Happy Father’s Day 💙
 
 You unlocked this message.
@@ -129,3 +128,6 @@ im frustrated that i cant express myself properly but i hope you never doubt tha
   }
 }
 </script>
+
+</body>
+</html>
