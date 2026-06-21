@@ -97,18 +97,18 @@ function typeText(text, element, speed = 35) {
 }
 
 function checkAnswer() {
+  // .toLowerCase() converts input to lowercase, so we only need lowercase checks
   const userInput = document.getElementById("answer").value.trim().toLowerCase();
   const error = document.getElementById("error");
   const message = document.getElementById("message");
 
-  // accept multiple reasonable answers
-  const correctAnswers = ["me", "Me", "Vishwanath", "vishwanath"];
+  const correctAnswers = ["me", "vishwanath"];
 
   if (correctAnswers.includes(userInput)) {
     error.innerHTML = "";
 
-    const text =
-`Happy Father’s Day 💙
+    // Added the missing backtick right at the end of the text message below
+    const text = `Happy Father’s Day 💙
 
 You unlocked this message.
 
@@ -120,7 +120,7 @@ I know im not very expressive, i dont hug often and i dont tell you how i feel b
 
 I'm really grateful for you, and how much you've invested in me, supported me and pushed me to be more confident and for the fact that you are my dad!!!! 
 
-im frustrated that i cant express myself properly but i hope you never doubt that i love you, even when im quiet or distant, and i always have and i always will!!
+im frustrated that i cant express myself properly but i hope you never doubt that i love you, even when im quiet or distant, and i always have and i always will!!`;
 
     typeText(text, message);
   } else {
@@ -128,3 +128,4 @@ im frustrated that i cant express myself properly but i hope you never doubt tha
     message.innerHTML = "";
   }
 }
+</script>
